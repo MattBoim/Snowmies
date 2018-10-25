@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Select Your Resort</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'snowmies/css/main.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body class="background">
+    <div class="background jumbotron" align="center">
+        <div class="container">
+            <h1>Welcome, {{user.first_name}}</h1>
+            <h2>Select Your Ski Resort</h2>
+            <form action="/processresort" method="post">
+                {% csrf_token %}
+                <select name="resort">
+                    <option value="Crystal Mountain">Crystal Mountain</option>
+                    <option value="Mission Ridge">Mission Ridge</option>
+                    <option value="Mount Bachelor">Mount Bachelor</option>
+                    <option value="Mount Hood Meadows">Mount Hood Meadows</option>
+                    <option value="Steven's Pass">Steven's Pass</option>
+                    <option value="The Summit at Snoqualmie">The Summit at Snoqualmie</option>
+                    <option value="Timberline Ski Resort">Timberline Ski Resort</option>
+                </select>
+                <input type="submit" class="button" value="Go">
+            </form>
+        </div>
+        <a href="/logout">Logout</a>
+    </div>
+    {% load static %}
+    <img class="mx-auto maxwidth" src="{% static "snowmies/images/DrawnGrab.jpg" %}" alt="My image">
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add a Ride</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'snowmies/css/main.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body class="background margin1" align="center">
+    <div class="wrapper background1 register">
+        <h1>Add a Ride at {{resort}}</h1>
+        <a href="/dashboard">Go Back</a>
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li class="{{ message.tags }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <form action="/processadd" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="time">Date and Time: </label>
+                <input type="datetime-local" class="form-control" name="time" required>
+            </div>
+            <div class="form-group">
+                <label for="location">Location: </label>
+                <input type="text" class="form-control" id="location" name="location" aria-describedby="locationhelp" placeholder="Enter meetup location" required>
+                <small id="locationhelp" class="form-text text-muted">(e.g. Bottom of Skyline Express, Tye Creek Lodge Bar...)</small>
+            </div>
+            <div class="form-group">
+            <label for="riders" >Riders Preference: </label>
+            <select class="form-control" id="riders" name="riders">
+                <option value="Skiers Only">Skiers Only</option>
+                <option value="Snowboarders Only">Snowboarders Only</option>
+                <option value="Both Skiers and Snowboarders">Both Skiers and Snowboarders</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="experience" >Recommended Experience Level: </label>
+            <select class="form-control" id="experience" name="experience">
+                <option value="1 ">1 (Beginner)</option>
+                <option value="2">2 (Intermediate)</option>
+                <option value="3">3 (Expert)</option>
+            </select>
+        </div>
+        <div class="form-group mb-2 form-inline">
+            <label for="min_age" > Age Range: </label>
+            <input type="text" class="form-control" id="min_age" name="min_age" placeholder="minimum age" required>
+            -
+            <input type="text" class="form-control" id="max_age"name="max_age" placeholder="maximum age" required>
+        </div>
+        <div class="form-group">
+            <label for="ride_type" > Type of Ride: </label>
+            <select class="form-control" id="ride_type" name="ride_type">
+                <option value="Groomers">Groomers</option>
+                <option value="Park">Park</option>
+                <option value="Off-piste">Off-piste</option>
+                <option value="All-mountain">All-mountain</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="more">More details: </label>
+            <textarea class="form-control" id="more" rows="3" name="more" aria-describedby="morehelp"></textarea>
+            <small id="morehelp" class="form-text text-muted">include any more details you wish to add (e.g. find the guy wearing a bright yellow onesie)</small>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

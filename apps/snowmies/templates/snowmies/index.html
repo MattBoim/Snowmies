@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Snowmies</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'snowmies/css/main.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    {% load static %}
+    <!-- background="{% static "snowmies/images/DrawnGrabsmall.jpg" %}" -->
+    <body class="mountainbackground">
+        <div align="center">
+        <div class="jumbotron nomargin" background-color=transparent !important>
+            <h1 class="moveright">Snowmies</h1>
+            <h5>Schedule group rides on the mountain</h5>
+            {% load static %}
+            <img class="mx-auto logo" src="{% static "snowmies/images/DrawnGrabicon.png" %}" alt="My image">
+        </div>
+        <div class="wrapper">
+
+        <br>
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li class="{{ message.tags }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <div class="register backbox" class="form-group">
+            <h2>Registration</h2>
+            <form action="/process" method="post">
+                {% csrf_token %}
+                <label for="first_name">First Name: </label>
+                <input type="text" name="first_name" class="form-control">
+                <br>
+                <label for="last_name">Last Name: </label>
+                <input type="text" name="last_name" class="form-control">
+                <br>
+                <label for="email">Email: </label>
+                <input type="text" name="email" class="form-control">
+                <br>
+                <label for="password">Password: </label>
+                <input type="password" name="password" autocomplete="off" class="form-control">
+                <small>(must be at least 8 characters long)</small>
+                <br>
+                <label for="cpassword">Confirm pw: </label>
+                <input type="password" name="cpassword" autocomplete="off" class="form-control">
+                <br>
+                <input type="submit" class="button" value="Register" class="form-control">
+            </form>
+        </div>
+        <div class="register backbox" class="form-group">
+        <h2>Login</h2>
+        <form action="/login" method="post">
+            {% csrf_token %}
+            <label for="email">Email: </label>
+            <input type="text" name="email" class="form-control">
+            <br>
+            <label for="password">Password: </label>
+            <input type="password" name="password" autocomplete="off" class="form-control">
+            <br>
+            <input type="submit" class="button1" value="login" class="form-control">
+        </form>
+        </div>
+    </div>
+    <small class="whitetext">Created by Matt Rozenboim</small>
+    </div>
+    </body>
+  </html>

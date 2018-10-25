@@ -1,0 +1,112 @@
+.register{
+    display: inline-block;
+    width: 250px;
+    vertical-align: top;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 5px 10px 10px #8ec8ff;
+    margin: 15px;
+    text-align: left;
+}
+
+.moveright{
+    margin-left: 20px;
+}
+
+.wrapper{
+    width: 90%;
+    padding: 20px;
+}
+
+.mountainbackground{
+    background-image: url("../images/mountains.jpg");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-color: #c7e3fd;
+    background-size: cover;
+}
+
+.jumbotron{background-color: transparent !important;}
+
+.background{
+    background-color: #c7e3fd !important;
+}
+
+.background1{
+    background-color: #ffffff !important;
+}
+
+.backbox{
+    border-radius: 10px;
+}
+
+.vertical-center {
+    height:100%;
+    width:100%;
+  
+    /* text-align: center;  align the inline(-block) elements horizontally */
+  }
+  
+.mycontent-right{
+    border-right: 1px solid rgb(0, 75, 88);
+    padding-right: 4px;
+}
+
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 1.428571429;
+    border-radius: 15px;
+}
+  .btn-circle.btn-lg {
+    width: 50px;
+    height: 50px;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+    border-radius: 25px;
+}
+
+.uphacky {
+    margin-top: -50px;
+}
+
+.imgup{
+    margin: -70px 0px;
+    width: 100%;
+}
+
+.maxwidth{
+    width: 100%;
+}
+.logo{
+    width: 50%;
+}
+
+.nomargin{
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+.margin1{
+    margin: 10px;
+}
+
+.whitetext{
+    color: white;
+}
+
+.day{
+    text-align: center;
+    /* display: inline-block; */
+    margin: 10px;
+}
+
+label{
+    display: inline-block;
+    /* width: 100px; */
+    /* text-align: right; */
+}​
