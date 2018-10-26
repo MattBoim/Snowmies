@@ -24,36 +24,50 @@
         <h5><a href="https://www.stevenspass.com/site/mountain/reports/snow-and-weather-report/@@snow-and-weather-report"
             target="_blank">
             {{resort}} Snow Report & Weather<i class="btn-circle btn-lg glyphicon glyphicon-cloud"></i></a></h5>
+            <a href="https://www.stevenspass.com/site/mountain/maps/trail-map/index.html/TrailMap-StevensPass-2017-18.pdf" 
+            target="_blank">Trail Map</a>
         {% endif %}
         {% if resort == "Crystal Mountain" %}
         <h5><a href="https://www.crystalmountainresort.com/the-mountain/mountain-report/weather-conditions/"
             target="_blank">
             {{resort}} Snow Report & Weather</a></h5>
+            <a href="https://www.crystalmountainresort.com/wp-content/uploads/2018/02/CRYSTAL%20MT%20winter-PDFkey-02082018.pdf" 
+            target="_blank">Trail Map</a>
         {% endif %}
         {% if resort == "Mission Ridge" %}
         <h5><a href="https://www.missionridge.com/snow-report"
             target="_blank">
             {{resort}} Snow Report & Weather</a></h5>
+            <a href="https://www.missionridge.com/sites/default/files/MR1314_TrailMap_0.jpg" 
+            target="_blank">Trail Map</a>
         {% endif %}
         {% if resort == "Mount Bachelor" %}
         <h5><a href="https://www.mtbachelor.com/conditions-report/"
             target="_blank">
             {{resort}} Snow Report & Weather</a></h5>
+            <a href="https://www.mtbachelor.com/uploaded/mt.%20b/728x547.jpg" 
+            target="_blank">Trail Map</a>
         {% endif %}
         {% if resort == "Mount Hood Meadows" %}
         <h5><a href="https://www.skihood.com/the-mountain/conditions"
             target="_blank">
             {{resort}} Snow Report & Weather</a></h5>
+            <a href="https://www.skihood.com/-/media/skihood/misc%20items/mhm%20main%20map_2017-01.jpg?h=878&w=800&la=en" 
+            target="_blank">Trail Map</a>
         {% endif %}
         {% if resort == "The Summit at Snoqualmie" %}
         <h5><a href="https://summitatsnoqualmie.com/conditions"
             target="_blank">
             {{resort}} Snow Report & Weather</a></h5>
+            <a href="https://summitatsnoqualmie.com/maps" 
+            target="_blank">Trail Map</a>
         {% endif %}
         {% if resort == "Timberline Ski Resort" %}
         <h5><a href="https://www.timberlinelodge.com/conditions"
             target="_blank">
             {{resort}} Snow Report & Weather</a></h5>
+            <a href="https://www.timberlinelodge.com/images/pdf/Timberline-2016-Trail-Map.pdf" 
+            target="_blank">Trail Map</a>
         {% endif %}
         
     </div>
@@ -159,7 +173,7 @@
         </div>
         {% endif %}
 
-        {% if icon == "cloudy" %}
+        {% if icon == "cloudy" or icon="fog" %}
         <div>
             <svg class="sunshine" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512">
                 <path class="cloud" d="M400,256c-5.3,0-10.6,0.4-15.8,1.1c-16.8-22.8-39-40.5-64.2-51.7c-10.5-4.6-21.5-8.1-32.9-10.4
