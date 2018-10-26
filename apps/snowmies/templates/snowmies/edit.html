@@ -35,18 +35,18 @@
             </div>
             <div class="form-group">
             <label for="riders" >Riders Preference: </label>
-            <select class="form-control" id="riders" name="riders" value="{{selectedride.ride_with}}">
-                <option value="Skiers Only">Skiers Only</option>
-                <option value="Snowboarders Only">Snowboarders Only</option>
-                <option value="Both Skiers and Snowboarders">Both Skiers and Snowboarders</option>
+            <select class="form-control" id="riders" name="riders">
+                <option value="Skiers Only"{% if selectedride.ride_with == "Skiers Only"%} selected="selected"{%endif%}>Skiers Only</option>
+                <option value="Snowboarders Only"{% if selectedride.ride_with == "Snowboarders Only"%}selected="selected"{%endif%}>Snowboarders Only</option>
+                <option value="Both Skiers and Snowboarders"{% if selectedride.ride_with == "Both Skiers and Snowboarders"%}selected="selected"{%endif%}>Both Skiers and Snowboarders</option>
             </select>
         </div>
         <div class="form-group">
             <label for="experience" >Recommended Experience Level: </label>
-            <select class="form-control" id="experience" name="experience" value="{{selectedride.experience_lvl}}">
-                <option value="1">1 (Beginner)</option>
-                <option value="2">2 (Intermediate)</option>
-                <option value="3">3 (Expert)</option>
+            <select class="form-control" id="experience" name="experience">
+                <option value="1"{% if selectedride.experience_lvl == 1 %} selected="selected"{%endif%}>1 (Beginner)</option>
+                <option value="2"{% if selectedride.experience_lvl == 2 %} selected="selected"{%endif%}>2 (Intermediate)</option>
+                <option value="3"{% if selectedride.experience_lvl == 3 %} selected="selected"{%endif%}>3 (Expert)</option>
             </select>
         </div>
         <div class="form-group mb-2 form-inline">
@@ -58,10 +58,10 @@
         <div class="form-group">
             <label for="ride_type" > Type of Ride: </label>
             <select class="form-control" id="ride_type" name="ride_type" value="{{selectedride.ride_type}}">
-                <option value="Groomers">Groomers</option>
-                <option value="Park">Park</option>
-                <option value="Off-piste">Off-piste</option>
-                <option value="All-mountain">All-mountain</option>
+                <option value="Groomers"{% if selectedride.ride_type == "Groomers" %} selected="selected"{%endif%}>Groomers</option>
+                <option value="Park"{% if selectedride.ride_type == "Park" %} selected="selected"{%endif%}>Park</option>
+                <option value="Off-piste"{% if selectedride.ride_type == "Off-piste" %} selected="selected"{%endif%}>Off-piste</option>
+                <option value="All-mountain"{% if selectedride.ride_type == "All-mountain" %} selected="selected"{%endif%}>All-mountain</option>
             </select>
         </div>
         <div class="form-group">
