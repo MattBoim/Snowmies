@@ -26,16 +26,16 @@
             {% csrf_token %}
             <div class="form-group">
                 <label for="time">Date and Time: </label>
-                <input type="datetime-local" class="form-control" name="time" value={{selectedride.time}} required>
+                <input type="datetime-local" class="form-control" name="time" value="{{selectedride.time}}" required>
             </div>
             <div class="form-group">
                 <label for="location">Location: </label>
-                <input type="text" class="form-control" id="location" name="location" aria-describedby="locationhelp" value={{selectedride.location}} required>
+                <input type="text" class="form-control" id="location" name="location" aria-describedby="locationhelp" value="{{selectedride.location}}" required>
                 <small id="locationhelp" class="form-text text-muted">(e.g. Bottom of Skyline Express, Tye Creek Lodge Bar...)</small>
             </div>
             <div class="form-group">
             <label for="riders" >Riders Preference: </label>
-            <select class="form-control" id="riders" name="riders" value={{selectedride.ride_with}}>
+            <select class="form-control" id="riders" name="riders" value="{{selectedride.ride_with}}">
                 <option value="Skiers Only">Skiers Only</option>
                 <option value="Snowboarders Only">Snowboarders Only</option>
                 <option value="Both Skiers and Snowboarders">Both Skiers and Snowboarders</option>
@@ -43,8 +43,8 @@
         </div>
         <div class="form-group">
             <label for="experience" >Recommended Experience Level: </label>
-            <select class="form-control" id="experience" name="experience" value={{selectedride.experience_lvl}}>
-                <option value="1 ">1 (Beginner)</option>
+            <select class="form-control" id="experience" name="experience" value="{{selectedride.experience_lvl}}">
+                <option value="1">1 (Beginner)</option>
                 <option value="2">2 (Intermediate)</option>
                 <option value="3">3 (Expert)</option>
             </select>
@@ -57,7 +57,7 @@
         </div>
         <div class="form-group">
             <label for="ride_type" > Type of Ride: </label>
-            <select class="form-control" id="ride_type" name="ride_type" value={{selectedride.ride_type}}>
+            <select class="form-control" id="ride_type" name="ride_type" value="{{selectedride.ride_type}}">
                 <option value="Groomers">Groomers</option>
                 <option value="Park">Park</option>
                 <option value="Off-piste">Off-piste</option>
